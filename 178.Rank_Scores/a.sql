@@ -1,5 +1,5 @@
 --- https://leetcode.com/problems/rank-scores/description/
 SELECT score,
-    (dense_ran() OVER ORDER BY score DESC) AS rank
+    (dense_rank() OVER ORDER BY score DESC) AS rank
 FROM Scores
 ORDER BY score DESC;
