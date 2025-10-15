@@ -1,5 +1,8 @@
 --- https://leetcode.com/problems/duplicate-emails/
-SELECT DISTINCT email
-FROM Person 
-GROUP BY email
-HAVING COUNT(*) > 1
+SELECT name AS Customers
+FROM Customers
+EXCEPT
+SELECT b.name AS Customers
+FROM Orders a
+LEFT JOIN Customers b
+ON a.customerId = b.Id
